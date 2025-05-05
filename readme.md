@@ -6,8 +6,6 @@
 
 ## Table of contents
 - [Roadmap](#Roadmap)
-- [Important](#Important)
-- [Applications](#Applications)
 - [Status](#Status)
 
 ## Roadmap
