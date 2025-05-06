@@ -32,5 +32,5 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       console.error("Element with id 'rotatingImage' not found.");
     }
-  });
-  
+  }
+);
