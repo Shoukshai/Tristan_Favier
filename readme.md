@@ -10,7 +10,8 @@
 
 ## Roadmap
 - [x] Make the router
-- [ ] Create a "cv" webpage
+- [x] Make a background for the homepage 
+- [ ] Create a "cv" webpage and add the important animations
 - [ ] Make the calculator's page and make it works
 - [ ] Same but for a contact me menu
 - [ ] The rest
