@@ -42,9 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(() => star.classList.add('show'));
   }
 
-  for (let i = 0; i < 5000; i++) {
-    addStar();
-  }
+  addStarBtn.addEventListener('click', addStar);
 
   function displayQuestion(index) {
     const currentQuestion = questions[index];
