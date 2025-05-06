@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       correctAnswer: "A"
     },
     {
-      question: "Question 2: Quel est la reponse A",
+      question: "Question 2: Quel est la reponse B",
       options: ["B", "C", "A", "D"],
       correctAnswer: "B"
     }
@@ -39,9 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
     star.style.left = `${Math.random() * window.innerWidth}px`;
     star.style.top = `${Math.random() * window.innerHeight}px`;
     starContainer.appendChild(star);
+    star.offsetHeight;
     requestAnimationFrame(() => star.classList.add('show'));
   }
 
+
+  for (let i = 0; i < 100; i++) {
+    addStar();
+  }
   addStarBtn.addEventListener('click', addStar);
 
   function displayQuestion(index) {
