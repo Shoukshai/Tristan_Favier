@@ -1875,6 +1875,21 @@
   padding: 5px 0;
 }
 
+.blurred-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.modal-box {
+  position: relative;
+  z-index: 20;
+}
+
 .star {
   position: absolute;
   border-radius: 50%;
@@ -1885,4 +1900,19 @@
 .star.show {
   opacity: 1;
   transform: scale(1);
+}
+
+.question-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.incorrect {
+  background-color: #f87171;
+  color: white;
+}
+
+.correct {
+  background-color: #34d399;
+  color: white;
 }
