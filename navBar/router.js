@@ -19,6 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
       question: "Question 2: Quel est la reponse B",
       options: ["B", "C", "A", "D"],
       correctAnswer: "B"
+    },
+    {
+      question: "Question 3: Quel est la reponse C",
+      options: ["B", "C", "A", "D"],
+      correctAnswer: "C"
+    },
+    {
+      question: "Question 4: Quel est la reponse D",
+      options: ["B", "C", "A", "D"],
+      correctAnswer: "D"
+    },
+    {
+      question: "Question 5: Quel est la reponse de la question 1",
+      options: ["B", "C", "A", "D"],
+      correctAnswer: "A"
     }
   ];
 
@@ -119,4 +134,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
 });
-
