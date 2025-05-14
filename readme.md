@@ -1,21 +1,5 @@
-# Folder for the web dev project
+# Vue 3 + Vite
 
-![Under Construction](https://img.shields.io/badge/Under%20Construction-red?style=flat)
-![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)
-![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Table of contents
-- [Roadmap](#Roadmap)
-- [Status](#Status)
-
-## Roadmap
-- [x] Setting up vue
-- [ ] Setting up Tailwind CSS / PostCSS / daisyUI (For good practice)
-- [ ] Setting up the router
-- [ ] Remaking everything ive done from the last commit
-- [ ] Refactoring the code to not use "normal css"
-- [ ] Deploying the poject
-
-## **Status:**
-> [!Warning]
-> **Under construction**, this is really not finished for now
+Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
