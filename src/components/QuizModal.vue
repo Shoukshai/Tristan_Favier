@@ -46,7 +46,7 @@
                     </p>
                     <button
                         @click="$emit('close')"
-                        class="btn"
+                        class="btn btn-outline hover:bg-emerald-950"
                     >
                         Close
                     </button>

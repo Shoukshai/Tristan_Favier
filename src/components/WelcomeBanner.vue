@@ -7,14 +7,14 @@
         <div class="grid grid-cols-2 gap-x-6 gap-y-4">
             <button
                 @click="$emit('add-stars')"
-                class="btn btn-outline z-10 basis-66"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
             >
                 Add stars
             </button>
 
             <button
                 @click="$emit('open-quiz')"
-                class="btn btn-outline z-10 basis-66"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
             >
                 Open the QUIZ
             </button>
