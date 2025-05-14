@@ -82,9 +82,9 @@ const questions = [
     correct: 'Vue',
   },
   {
-    question: 'A',
-    options: ['A', 'B', 'C', 'D'],
-    correct: 'A',
+    question: 'Combien de couleurs sont choisis pour le fond étoilé ?',
+    options: ['16', '6', '32', '24'],
+    correct: '6',
   },
 ]
 
@@ -106,26 +106,31 @@ const closeModal = () => {
 }
 
 const selectAnswer = (answer) => {
-  selectedAnswer.value = answer
-  showFeedback.value = true
-  backgroundBlur.value = true
+  selectedAnswer.value = answer;
+  showFeedback.value = true;
+  backgroundBlur.value = true;
 
-  const isCorrect = answer === currentQuestion.value.correct
+  const isCorrect = answer === currentQuestion.value.correct;
   if (isCorrect && currentQuestionIndex.value < questions.length - 1) {
-    selectedAnswer.value = null
-    feedbackMessage.value = ''
-    showFeedback.value = false
-    feedbackMessage.value = 'Bonne réponse'
+    feedbackMessage.value = 'Bonne réponse';
     setTimeout(() => {
-      currentQuestionIndex.value++
-    }, 1500)
+      selectedAnswer.value = null;
+      feedbackMessage.value = '';
+      showFeedback.value = false;
+      currentQuestionIndex.value++;
+    }, 1500);
+  } else if (!isCorrect) {
+    feedbackMessage.value = 'Mauvaise réponse';
+    setTimeout(() => {
+      closeModal();
+    }, 1500);
   } else {
-    feedbackMessage.value = 'Mauvaise réponse'
+    feedbackMessage.value = 'Bravo, vous avez terminé le quiz !';
     setTimeout(() => {
-      closeModal()
-    }, 1500)
+      closeModal();
+    }, 1500);
   }
-}
+};
 </script>
 
 <style scoped>

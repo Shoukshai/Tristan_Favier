@@ -37,3 +37,14 @@ const props = defineProps({
   feedbackMessage: String,
 })
 </script>
+
+<style scoped>
+  .btn-success {
+    background-color: #22c55e; /* Vert */
+    color: white;
+  }
+  .btn-error {
+    background-color: #ef4444; /* Rouge */
+    color: white;
+  }
+</style>
