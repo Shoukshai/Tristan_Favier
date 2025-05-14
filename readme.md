@@ -9,12 +9,12 @@
 - [Status](#Status)
 
 ## Roadmap
-- [x] Make the router
-- [x] Make a background for the homepage 
-- [ ] Create a "cv" webpage and add the important animations
-- [ ] Make the calculator's page and make it works
-- [ ] Same but for a contact me menu
-- [ ] The rest
+- [ ] Setting up angular
+- [ ] Setting up Tailwind CSS / PostCSS / daisyUI (For good practice)
+- [ ] Setting up the router
+- [ ] Remaking everything ive done from the last commit
+- [ ] Refactoring the code to not use "normal css"
+- [ ] Deploying the poject
 
 ## **Status:**
 > [!Warning]
