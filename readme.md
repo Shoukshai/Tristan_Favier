@@ -5,8 +5,17 @@
 ![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)
 
 ## Table of contents
+- [QnA](#QnA)
 - [Roadmap](#Roadmap)
 - [Status](#Status)
+
+## QnA
+- Why is the entire repo/code in english ?
+    - It's because in a real project, we have a higher chance to use english over french
+- Why use vue instead of vite like we saw in classe ?
+    - Because im more used to vue instead of vite, and the teacher said that we could use react for example if we are more experienced with it.
+- Did I used any form of AI ?
+    - Yes, but for minor issue fix / easier time at refactoring code
 
 ## Roadmap
 - [x] Setting up vue
