@@ -15,7 +15,7 @@
 - Why use vue instead of vite like we saw in classe ?
     - Because im more used to vue instead of vite, and the teacher said that we could use react for example if we are more experienced with it.
 - Did I used any form of AI ?
-    - Yes, but for minor issue fix / easier time at refactoring code
+    - Yes, but for minor issue fix / easier time at refactoring code (faster)
 
 ## Roadmap
 - [x] Setting up vue
