@@ -9,7 +9,7 @@
 - [Status](#Status)
 
 ## Roadmap
-- [ ] Setting up angular
+- [x] Setting up vue
 - [ ] Setting up Tailwind CSS / PostCSS / daisyUI (For good practice)
 - [ ] Setting up the router
 - [ ] Remaking everything ive done from the last commit
