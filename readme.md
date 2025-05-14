@@ -24,8 +24,13 @@
 - [x] Setting up vue
 - [x] Setting up Tailwind CSS / PostCSS / daisyUI (For good practice)
 - [x] Setting up the homepage
-- [ ] Remaking everything ive done from the last commit
-- [ ] Refactoring the code to not use "normal css"
+- [x] Quiz
+- [x] Bruteforce bot for the quiz
+- [x] Router
+- [x] Navigation guards
+- [ ] Contact page
+- [ ] Calc page
+- [ ] Resume page (CV)
 - [ ] Polishing the code
 - [ ] Making the other things
 - [ ] Deploying the poject
