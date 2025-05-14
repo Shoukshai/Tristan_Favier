@@ -1,8 +1,10 @@
 <template>
+  <!-- Floating action button with an icon -->
   <button
     class="btn btn-primary fixed bottom-6 right-6 shadow-lg rounded-full w-14 h-14 flex items-center justify-center z-50"
     @click="$emit('open-modal')"
   >
+    <!-- Centered icon (heroicon-style) -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="w-6 h-6"
@@ -21,5 +23,7 @@
 </template>
 
 <script setup>
-defineEmits(['open-modal'])
+// FloatingButton.vue
+// Emits an event to trigger the modal when clicked
+defineEmits(['open-modal']);
 </script>

@@ -1,9 +1,8 @@
 <template>
-  <div
-    class="bg-black min-h-screen overflow-hidden relative text-white flex items-center justify-center"
-  >
+  <div class="bg-black min-h-screen overflow-hidden relative text-white flex items-center justify-center">
     <header></header>
 
+    <!-- Main UI components -->
     <WelcomeBanner @add-stars="addStars" @open-quiz="openQuiz" />
     <QuizModal
       v-if="isQuizOpen"
@@ -21,15 +20,16 @@
       ></div>
     </transition>
 
+    <!-- Floating interaction buttons -->
     <FloatingButton @open-modal="openRobotModal" />
-
     <RobotModal
       :show="isRobotModalOpen"
       @close="closeRobotModal"
-      @yes="handleRobotYes"
+      @yes="handleRobotConfirmation"
     />
     <StarField :stars="stars" />
 
+    <!-- Footer -->
     <footer
       id="footer"
       class="fixed bottom-0 left-0 w-full h-[30px] bg-[#181818] p-[5px_0] text-white z-10 text-sm flex items-center px-4"
@@ -40,69 +40,79 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
-import WelcomeBanner from './components/WelcomeBanner.vue'
-import QuizModal from './components/QuizModal.vue'
-import StarField from './components/StarField.vue'
+import { ref, reactive, computed } from 'vue';
 
-import FloatingButton from './components/FloatingButton.vue'
-import RobotModal from './components/RobotModal.vue'
+// Component imports
+import WelcomeBanner from './components/WelcomeBanner.vue';
+import QuizModal from './components/QuizModal.vue';
+import StarField from './components/StarField.vue';
+import FloatingButton from './components/FloatingButton.vue';
+import RobotModal from './components/RobotModal.vue';
 
-const stars = ref([])
+// UI State
+const stars = ref([]);
+const backgroundBlur = ref(false);
+const isQuizOpen = ref(false);
+const selectedAnswer = ref(null);
+const feedbackMessage = ref('');
+const showFeedback = ref(false);
+const currentQuestionIndex = ref(0);
+const isRobotModalOpen = ref(false);
+const currentAttemptIndex = ref(0);
+const isBruteforcing = ref(false);
 
+// === StarField Logic ===
 const addStar = () => {
   const star = reactive({
     size: Math.floor(Math.random() * 6) + 4,
     top: Math.floor(Math.random() * 100),
     left: Math.floor(Math.random() * 100),
-    color: getRandomColor(),
+    color: getRandomHexColor(),
     opacity: 0,
     transform: 'scale(0.1)',
-  })
-  stars.value.push(star)
+  });
+
+  stars.value.push(star);
+
+  // Animate star after render
   setTimeout(() => {
-    star.opacity = 1
-    star.transform = 'scale(0.8)'
-  }, 0)
-}
+    star.opacity = 1;
+    star.transform = 'scale(0.8)';
+  }, 0);
+};
 
 const addStars = () => {
-  for (let i = 0; i < 100; i++) addStar()
-}
+  for (let i = 0; i < 100; i++) addStar();
+};
 
-const getRandomColor = () => {
-  const letters = '0123456789ABCDEF'
-  let color = '#'
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)]
-  }
-  return color
-}
+const getRandomHexColor = () => {
+  const hexDigits = '0123456789ABCDEF';
+  return '#' + Array.from({ length: 6 })
+    .map(() => hexDigits[Math.floor(Math.random() * 16)])
+    .join('');
+};
 
-const backgroundBlur = ref(false)
-const isQuizOpen = ref(false)
-const selectedAnswer = ref(null)
-const feedbackMessage = ref('')
-const showFeedback = ref(false)
-const currentQuestionIndex = ref(0)
-
-const isRobotModalOpen = ref(false)
-
+// === Robot Modal Control ===
 const openRobotModal = () => {
-  isRobotModalOpen.value = true
-  backgroundBlur.value = true
-}
+  isRobotModalOpen.value = true;
+  backgroundBlur.value = true;
+};
 
 const closeRobotModal = () => {
-  isRobotModalOpen.value = false
-  backgroundBlur.value = false
-}
+  isRobotModalOpen.value = false;
+  backgroundBlur.value = false;
+};
 
-const handleRobotYes = () => {
-  console.log("User agreed to help the robot!")
-  closeRobotModal()
-}
+const handleRobotConfirmation = () => {
+  console.log('Bruteforce initiated');
+  isBruteforcing.value = true;
+  currentAttemptIndex.value = 0;
+  currentQuestionIndex.value = 0;
+  closeRobotModal();
+  startBruteforce();
+};
 
+// === Quiz Logic ===
 const questions = [
   {
     question: 'Quel est le framework utilisé pour construire cette application ?',
@@ -114,24 +124,46 @@ const questions = [
     options: ['16', '32', '24', '6'],
     correct: '6',
   },
-]
+  {
+    question: 'A combien de fps voient les yeux humains ?',
+    options: ['32', '26', '24', '13'],
+    correct: '13',
+  },
+  {
+    question: 'icl ts pmo ikiag w u gurt yo: 🥀🥀🥀',
+    options: ['🥭', '🔋', '🌹', '❤️'],
+    correct: '🔋',
+  },
+];
 
-const currentQuestion = computed(() => questions[currentQuestionIndex.value])
+const currentQuestion = computed(() => questions[currentQuestionIndex.value]);
 
 const openQuiz = () => {
-  isQuizOpen.value = true
-  selectedAnswer.value = null
-  feedbackMessage.value = ''
-  showFeedback.value = false
-  backgroundBlur.value = true
-}
+  isQuizOpen.value = true;
+  selectedAnswer.value = null;
+  feedbackMessage.value = '';
+  showFeedback.value = false;
+  backgroundBlur.value = true;
+};
 
 const closeModal = () => {
-  isQuizOpen.value = false
-  selectedAnswer.value = null
-  currentQuestionIndex.value = 0
-  backgroundBlur.value = false
-}
+  isQuizOpen.value = false;
+  selectedAnswer.value = null;
+  backgroundBlur.value = false;
+
+  if (
+    isBruteforcing.value &&
+    (currentQuestionIndex.value < questions.length - 1 ||
+      currentAttemptIndex.value < currentQuestion.value.options.length)
+  ) {
+    setTimeout(() => {
+      startBruteforce();
+    }, 1000);
+  } else {
+    currentQuestionIndex.value = 0;
+    isBruteforcing.value = false;
+  }
+};
 
 const selectAnswer = (answer) => {
   selectedAnswer.value = answer;
@@ -139,25 +171,42 @@ const selectAnswer = (answer) => {
   backgroundBlur.value = true;
 
   const isCorrect = answer === currentQuestion.value.correct;
-  if (isCorrect && currentQuestionIndex.value < questions.length - 1) {
-    feedbackMessage.value = 'Bonne réponse';
-    setTimeout(() => {
-      selectedAnswer.value = null;
-      feedbackMessage.value = '';
-      showFeedback.value = false;
-      currentQuestionIndex.value++;
-    }, 1500);
-  } else if (!isCorrect) {
-    feedbackMessage.value = 'Mauvaise réponse';
-    setTimeout(() => {
+  feedbackMessage.value = isCorrect ? 'Bonne réponse' : 'Mauvaise réponse';
+
+  setTimeout(() => {
+    if (isCorrect) {
+      if (currentQuestionIndex.value < questions.length - 1) {
+        currentQuestionIndex.value++;
+        currentAttemptIndex.value = 0;
+        resetFeedback();
+        if (isBruteforcing.value) startBruteforce();
+      } else {
+        feedbackMessage.value = 'Bravo, vous avez terminé le quiz !';
+        isBruteforcing.value = false;
+        setTimeout(closeModal, 1500);
+      }
+    } else {
       closeModal();
-    }, 1500);
-  } else {
-    feedbackMessage.value = 'Bravo, vous avez terminé le quiz !';
-    setTimeout(() => {
-      closeModal();
-    }, 1500);
-  }
+    }
+  }, 1500);
+};
+
+const resetFeedback = () => {
+  selectedAnswer.value = null;
+  feedbackMessage.value = '';
+  showFeedback.value = false;
+};
+
+// Brute-force simulation
+const startBruteforce = () => {
+  if (!isQuizOpen.value) openQuiz();
+
+  setTimeout(() => {
+    const attemptAnswer = currentQuestion.value.options[currentAttemptIndex.value];
+    console.log(`Trying answer: ${attemptAnswer}`);
+    selectAnswer(attemptAnswer);
+    currentAttemptIndex.value++;
+  }, 500);
 };
 </script>
 
