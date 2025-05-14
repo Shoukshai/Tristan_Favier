@@ -23,6 +23,8 @@
 - [x] Setting up the homepage
 - [ ] Remaking everything ive done from the last commit
 - [ ] Refactoring the code to not use "normal css"
+- [ ] Polishing the code
+- [ ] Making the other things
 - [ ] Deploying the poject
 
 ## **Status:**
