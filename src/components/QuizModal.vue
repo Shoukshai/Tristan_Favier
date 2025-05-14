@@ -31,11 +31,11 @@
 </template>
 
 <script setup>
-const props = defineProps({
-  question: Object,
-  selectedAnswer: String,
-  feedbackMessage: String,
-})
+  const props = defineProps({
+    question: Object,
+    selectedAnswer: String,
+    feedbackMessage: String,
+  })
 </script>
 
 <style scoped>

@@ -20,6 +20,14 @@
         class="absolute inset-0 w-full backdrop-blur-[8px] z-10"
       ></div>
     </transition>
+
+    <FloatingButton @open-modal="openRobotModal" />
+
+    <RobotModal
+      :show="isRobotModalOpen"
+      @close="closeRobotModal"
+      @yes="handleRobotYes"
+    />
     <StarField :stars="stars" />
 
     <footer
@@ -36,6 +44,9 @@ import { ref, reactive, computed } from 'vue'
 import WelcomeBanner from './components/WelcomeBanner.vue'
 import QuizModal from './components/QuizModal.vue'
 import StarField from './components/StarField.vue'
+
+import FloatingButton from './components/FloatingButton.vue'
+import RobotModal from './components/RobotModal.vue'
 
 const stars = ref([])
 
@@ -75,6 +86,23 @@ const feedbackMessage = ref('')
 const showFeedback = ref(false)
 const currentQuestionIndex = ref(0)
 
+const isRobotModalOpen = ref(false)
+
+const openRobotModal = () => {
+  isRobotModalOpen.value = true
+  backgroundBlur.value = true
+}
+
+const closeRobotModal = () => {
+  isRobotModalOpen.value = false
+  backgroundBlur.value = false
+}
+
+const handleRobotYes = () => {
+  console.log("User agreed to help the robot!")
+  closeRobotModal()
+}
+
 const questions = [
   {
     question: 'Quel est le framework utilisé pour construire cette application ?',
@@ -83,7 +111,7 @@ const questions = [
   },
   {
     question: 'Combien de couleurs sont choisis pour le fond étoilé ?',
-    options: ['16', '6', '32', '24'],
+    options: ['16', '32', '24', '6'],
     correct: '6',
   },
 ]
