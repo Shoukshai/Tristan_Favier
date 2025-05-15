@@ -18,7 +18,7 @@
     - Because im more used to vue instead of vite, and the teacher said that we could use react for example if we are more experienced with it.
     - Because I want vue router.
 - Did I used any form of AI ?
-    - Yes, but for minor issue fix / easier time at refactoring code (faster)
+    - Yes, but for minor issue fix / easier time at refactoring code (faster) / code comments
 
 ## Roadmap
 - [x] Setting up vue
