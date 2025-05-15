@@ -1,7 +1,10 @@
 <template>
     <div class="bg-black min-h-screen overflow-hidden relative text-white flex items-center justify-center">
         <header></header>
-
+        
+        <!-- Bruteforce Banner -->
+        <BruteforceBanner :show="isBruteforcing" @stop="isBruteforcing = false" />        
+        
         <!-- Main UI components -->
         <WelcomeBanner
             @add-stars="addStars"
@@ -62,6 +65,8 @@
     import FloatingButton from "../components/FloatingButton.vue";
     import RobotModal from "../components/RobotModal.vue";
     import AlertModal from "../components/AlertModal.vue";
+    import BruteforceBanner from "../components/BruteforceBanner.vue";
+
 
     // UI State
     const stars = ref([]);
