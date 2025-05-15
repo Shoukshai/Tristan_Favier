@@ -2,9 +2,9 @@
     <div class="z-10 relative px-6 py-12 max-w-3xl mx-auto">
         <h1 class="text-5xl font-bold text-center mb-10">Contact Me</h1>
 
-        <!-- Contact form -->
+        <!-- Contact Form -->
         <form
-            @submit.prevent="$emit('submit-form')"
+            @submit.prevent="handleSubmit"
             class="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
             <!-- Email Field -->
@@ -77,20 +77,66 @@
             <div class="md:col-span-2 flex justify-end">
                 <button
                     type="submit"
-                    class="btn btn-primary"
+                    class="btn btn-outline hover:bg-emerald-950"
                 >
                     Send
                 </button>
             </div>
         </form>
+
+        <!-- Sent Confirmation Modal -->
+        <SentModal
+            :show="showModal"
+            title="Message Sent"
+            message="Your message has been successfully sent"
+            @close="showModal = false"
+        />
     </div>
 </template>
 
 <script setup>
     // ContactBanner.vue
-    // Props: form (reactive), errors (reactive)
-    // Emits: 'submit-form' on form submit
+    // Handles contact form state and validation logic
 
-    defineProps(['form', 'errors']);
-    defineEmits(['submit-form']);
+    import { reactive, ref } from 'vue';
+    import SentModal from './SentModal.vue';
+
+    // Form data
+    const form = reactive({
+        email: '',
+        name: '',
+        subject: '',
+        message: '',
+    });
+
+    // Error tracking
+    const errors = reactive({
+        email: false,
+        name: false,
+        message: false,
+    });
+
+    // Modal state
+    const showModal = ref(false);
+
+    /**
+     * Validates form and shows modal on success
+     */
+    function handleSubmit() {
+        errors.email = !form.email.trim();
+        errors.name = !form.name.trim();
+        errors.message = !form.message.trim();
+
+        const hasError = errors.email || errors.name || errors.message;
+
+        if (!hasError) {
+            showModal.value = true;
+
+            // Reset form fields
+            form.email = '';
+            form.name = '';
+            form.subject = '';
+            form.message = '';
+        }
+    }
 </script>

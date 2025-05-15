@@ -48,7 +48,6 @@
         const hasError = errors.email || errors.name || errors.message;
 
         if (!hasError) {
-            alert('Message sent!');
             form.email = '';
             form.name = '';
             form.subject = '';
