@@ -8,6 +8,5 @@
 </template>
 
 <script setup>
-    // FooterBar.vue
-    // Static footer with branding info
+    // Static footer - no logic needed
 </script>

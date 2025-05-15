@@ -7,7 +7,6 @@
             class="bg-black text-white rounded-lg shadow-lg p-6 w-full max-w-md border border-green-500/50"
         >
             <div class="flex items-center mb-4">
-                <!-- Success Icon -->
                 <svg
                     class="w-6 h-6 text-green-400 mr-2 flex-shrink-0"
                     fill="none"
@@ -22,7 +21,6 @@
                         d="M5 13l4 4L19 7"
                     />
                 </svg>
-
                 <h2 class="text-xl font-bold">{{ title }}</h2>
             </div>
 
@@ -41,10 +39,6 @@
 </template>
 
 <script setup>
-    // SentModal.vue
-    // Props: show (Boolean), title (String), message (String)
-    // Emits: 'close' event when dismissed
-
     defineProps({
         show: Boolean,
         title: String,

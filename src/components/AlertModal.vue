@@ -1,13 +1,12 @@
 <template>
     <div
-        v-if="show"
+        v-if="isAlertOn"
         class="fixed inset-0 bg-black/75 flex items-center justify-center z-50"
     >
         <div
             class="bg-black text-white rounded-lg shadow-lg p-6 w-full max-w-md border border-red-500/50"
         >
             <div class="flex items-center mb-4">
-                <!-- Warning Icon -->
                 <svg
                     class="w-6 h-6 text-red-400 mr-2 flex-shrink-0"
                     fill="none"
@@ -22,7 +21,6 @@
                         d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
                     />
                 </svg>
-
                 <h2 class="text-xl font-bold">{{ title }}</h2>
             </div>
 
@@ -41,12 +39,8 @@
 </template>
 
 <script setup>
-    // AlertModal.vue
-    // Props: show (Boolean), title (String), message (String)
-    // Emits: 'close' when dismissed
-
     defineProps({
-        show: Boolean,
+        isAlertOn: Boolean,
         title: String,
         message: String,
     });

@@ -18,7 +18,7 @@
     - Because im more used to vue instead of vite, and the teacher said that we could use react for example if we are more experienced with it.
     - Because I want vue router.
 - Did I used any form of AI ?
-    - Yes, but for minor issue fix / easier time at refactoring code (faster) / code comments
+    - Yes, but for minor issue fix / easier time at refactoring code (faster) / code overhauls
 
 ## Roadmap
 - [x] Setting up vue
@@ -28,8 +28,8 @@
 - [x] Bruteforce bot for the quiz
 - [x] Router
 - [x] Navigation guards
-- [ ] Contact page
-- [ ] Calc page
+- [x] Contact page
+- [x] Calc menu
 - [ ] Resume page (CV)
 - [ ] Polishing the code
 - [ ] Making the other things

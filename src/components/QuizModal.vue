@@ -4,7 +4,9 @@
             id="quizModal"
             class="modal modal-open fixed inset-0 flex justify-center bg-black bg-opacity-75 overflow-y-auto"
         >
-            <div class="relative z-[20] bg-black text-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
+            <div
+                class="relative z-[20] bg-black text-white p-6 rounded-lg shadow-lg w-[90%] max-w-md"
+            >
                 <h2
                     class="text-2xl font-bold mb-4"
                     id="questionTitle"
@@ -12,7 +14,6 @@
                     Question
                 </h2>
 
-                <!-- Question and Options -->
                 <div
                     id="questionContainer"
                     class="p-5 text-center"
@@ -26,8 +27,13 @@
                         <button
                             class="btn btn-outline w-full my-2"
                             :class="{
-                                'btn-success': selectedAnswer && option === question.correct,
-                                'btn-error': selectedAnswer && option === selectedAnswer && option !== question.correct,
+                                'btn-success':
+                                    selectedAnswer &&
+                                    option === question.correct,
+                                'btn-error':
+                                    selectedAnswer &&
+                                    option === selectedAnswer &&
+                                    option !== question.correct,
                             }"
                             @click="!selectedAnswer && $emit('select', option)"
                         >
@@ -36,7 +42,6 @@
                     </div>
                 </div>
 
-                <!-- Feedback and Close -->
                 <div class="modal-action">
                     <p
                         id="feedbackMessage"
@@ -57,30 +62,20 @@
 </template>
 
 <script setup>
-    // QuizModal.vue
-    // Props:
-    //   question: an object with question text and multiple options
-    //   selectedAnswer: user's chosen answer
-    //   feedbackMessage: string feedback after selection
-
-    const props = defineProps({
-        question: {
-            type: Object,
-            required: true,
-        },
+    defineProps({
+        question: Object,
         selectedAnswer: String,
         feedbackMessage: String,
     });
 </script>
 
 <style scoped>
-    /* Override Tailwind buttons with custom feedback colors */
     .btn-success {
-        background-color: #22c55e; /* Green */
+        background-color: #22c55e;
         color: white;
     }
     .btn-error {
-        background-color: #ef4444; /* Red */
+        background-color: #ef4444;
         color: white;
     }
 </style>

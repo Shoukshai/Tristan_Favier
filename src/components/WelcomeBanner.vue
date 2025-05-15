@@ -3,7 +3,6 @@
         <h1 class="text-5xl font-bold">Welcome to my website</h1>
         <br />
 
-        <!-- Action buttons -->
         <div class="grid grid-cols-2 gap-x-6 gap-y-4">
             <button
                 @click="$emit('add-stars')"
@@ -18,11 +17,29 @@
             >
                 Open the QUIZ
             </button>
+
+            <button
+                @click="$emit('toggle-calc')"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
+            >
+                {{ isCalcOpen ? 'Close Calculator' : 'Open Calculator' }}
+            </button>
+
+            <button
+                @click="$emit('navigateToCV')"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
+            >
+                Go to my resume (not done yet)
+            </button>
         </div>
     </div>
 </template>
 
 <script setup>
-    // WelcomeBanner.vue
-    // Emits: add-stars, open-quiz
+    defineProps({
+        isCalcOpen: {
+            type: Boolean,
+            default: false,
+        },
+    });
 </script>
