@@ -4,7 +4,7 @@
             v-if="show"
             @click="$emit('stop')"
             class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-sm px-4 py-2 rounded-full shadow-lg z-[9999] cursor-pointer hover:bg-red-700 transition"
-            title="Cliquez pour arrêter le bruteforce"
+            title="Click to stop bruteforce"
         >
             Bruteforce on
         </div>
@@ -12,6 +12,8 @@
 </template>
 
 <script setup>
+    // BruteforceBanner.vue
+    // Displays a notification badge during bruteforce mode
     defineProps({
         show: Boolean,
     });
@@ -26,6 +28,7 @@
             opacity 0.3s ease,
             transform 0.3s ease;
     }
+
     .fade-enter-from,
     .fade-leave-to {
         opacity: 0;

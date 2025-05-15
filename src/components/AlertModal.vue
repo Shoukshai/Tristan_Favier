@@ -3,8 +3,11 @@
         v-if="show"
         class="fixed inset-0 bg-black/75 flex items-center justify-center z-50"
     >
-        <div class="bg-black text-white rounded-lg shadow-lg p-6 w-full max-w-md border border-white/10">
+        <div
+            class="bg-black text-white rounded-lg shadow-lg p-6 w-full max-w-md border border-white/10"
+        >
             <div class="flex items-center mb-4">
+                <!-- Warning Icon -->
                 <svg
                     class="w-6 h-6 text-red-400 mr-2 flex-shrink-0"
                     fill="none"
@@ -38,10 +41,15 @@
 </template>
 
 <script setup>
+    // AlertModal.vue
+    // Props: show (boolean), title (string), message (string)
+    // Emits: 'close' when modal is dismissed
+
     defineProps({
         show: Boolean,
         title: String,
         message: String,
     });
-    defineEmits(["close"]);
+
+    defineEmits(['close']);
 </script>

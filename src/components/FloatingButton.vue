@@ -1,7 +1,7 @@
 <template>
     <!-- Floating action button with an icon -->
     <button
-        class="btn btn-outline fixed bottom-6 right-6 shadow-lg rounded-full w-14 h-14 flex items-center justify-center z-50 hover:bg-emerald-950"
+        class="btn btn-outline fixed bottom-10 right-2 shadow-lg rounded-full w-14 h-14 flex items-center justify-center z-50 hover:bg-emerald-950"
         @click="$emit('open-modal')"
     >
         <!-- Centered icon (heroicon-style) -->
