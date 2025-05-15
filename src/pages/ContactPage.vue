@@ -1,5 +1,6 @@
 <template>
     <div class="min-h-screen overflow-hidden relative text-white flex items-center justify-center">
+        <!-- Cinematic lain's themed background -->
         <LainBackground />
 
         <header></header>

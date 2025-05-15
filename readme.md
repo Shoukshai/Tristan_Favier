@@ -29,11 +29,11 @@
 - [x] Router
 - [x] Navigation guards
 - [ ] Contact page
-- [ ] Contact page backend
 - [ ] Calc page
 - [ ] Resume page (CV)
 - [ ] Polishing the code
 - [ ] Making the other things
+- [ ] Contact page backend
 - [ ] Deploying the poject
 
 ## **Status:**
