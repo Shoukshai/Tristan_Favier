@@ -1,7 +1,7 @@
 <template>
-    <div
-        class="bg-black min-h-screen overflow-hidden relative text-white flex items-center justify-center"
-    >
+    <div class="min-h-screen overflow-hidden relative text-white flex items-center justify-center">
+        <LainBackground />
+
         <header></header>
 
         <!-- Contact form banner -->
@@ -14,7 +14,7 @@
 
 <script setup>
     // ContactPage.vue
-    // Combines the contact form and footer into a full page
     import ContactBanner from '../components/ContactBanner.vue';
     import FooterBar from '../components/FooterBar.vue';
+    import LainBackground from '../components/LainBackground.vue';
 </script>
