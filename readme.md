@@ -29,6 +29,7 @@
 - [x] Router
 - [x] Navigation guards
 - [ ] Contact page
+- [ ] Contact page backend
 - [ ] Calc page
 - [ ] Resume page (CV)
 - [ ] Polishing the code
