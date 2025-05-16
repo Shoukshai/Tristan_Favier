@@ -5,7 +5,7 @@
         <header></header>
 
         <BruteforceBanner
-            :show="isBruteforceOn"
+            :isBruteNoticeOn="isBruteforceOn"
             @stop="isBruteforceOn = false"
         />
 
@@ -44,7 +44,7 @@
 
         <AlertModal
             v-if="isBlockedNoticeOn"
-            :show="isBlockedNoticeOn"
+            :isAlertOn="isBlockedNoticeOn"
             title="Accès refusé"
             message="Vous devez compléter le quiz avant d'accéder à cette page."
             @close="isBlockedNoticeOn = false"
