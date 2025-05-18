@@ -26,10 +26,10 @@
             </button>
 
             <button
-                @click="$emit('navigateToCV')"
+                @click="$emit('router-passion')"
                 class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
             >
-                Go to my resume (not done yet)
+                My passions
             </button>
         </div>
     </div>

@@ -13,7 +13,7 @@
             @add-stars="handleAddStars"
             @open-quiz="openQuizPanel"
             @toggle-calc="toggleCalculator"
-            @navigateToCV="goToResume"
+            @router-passion="goToPassion"
             :isCalcOpen="isCalculatorOn"
         />
 
@@ -244,8 +244,8 @@
         isCalculatorOn.value = !isCalculatorOn.value;
     };
 
-    const goToResume = () => {
-        router.push('/cv');
+    const goToPassion = () => {
+        router.push('/passion');
     };
 </script>
 
