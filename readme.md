@@ -8,6 +8,7 @@
 
 ## Table of contents
 - [QnA](#QnA)
+- [Tree](#Tree)
 - [Roadmap](#Roadmap)
 - [Status](#Status)
 
@@ -20,6 +21,45 @@
 - Did I used any form of AI ?
     - Yes, but for minor issue fix / easier time at refactoring code (faster) / code overhauls
 
+## Tree
+```bash
+"Tristan_Favier's Important File Tree"
+├───src
+│   ├───assets
+│   │   ├───computer.png
+│   │   ├───expedition33.jpeg
+│   │   ├───lain.jpeg
+│   │   └───vue.svg
+│   ├───components
+│   │   ├───AlertModal.vue
+│   │   ├───BruteforceBanner.vue
+│   │   ├───Calc.vue
+│   │   ├───ContactBanner.vue
+│   │   ├───FloatingButton.vue
+│   │   ├───FooterBar.vue
+│   │   ├───LainBackground.vue
+│   │   ├───QuizModal.vue
+│   │   ├───RobotModal.vue
+│   │   ├───SentModal.vue
+│   │   ├───Split.vue
+│   │   ├───StarField.vue
+│   │   └───WelcomeBanner.vue
+│   ├───pages
+│   │   ├───ContactPage.vue
+│   │   ├───HomePage.vue
+│   │   └───PassionPage.vue
+│   ├───App.vue
+│   ├───main.js
+│   ├───router.js
+│   ├───style.css
+├───index.html
+├───package-lock.json
+├───package.json
+├───readme.md
+└───vite.config.js
+```
+
+
 ## Roadmap
 - [x] Setting up vue
 - [x] Setting up Tailwind CSS / PostCSS / daisyUI (For good practice)
@@ -31,6 +71,8 @@
 - [x] Contact page
 - [x] Calc menu
 - [ ] ~~Port my old html/css cv to tailwindcss/daisyui~~
+- [x] Passion page
+- [ ] Adding content to the page
 - [ ] Polishing the code
 - [ ] Making the other things
 - [ ] Contact page backend
