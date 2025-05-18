@@ -30,8 +30,7 @@
 - [x] Navigation guards
 - [x] Contact page
 - [x] Calc menu
-- [ ] Port my old html/css cv to tailwindcss/daisyui
-- [ ] Resume page (CV)
+- [ ] ~~Port my old html/css cv to tailwindcss/daisyui~~
 - [ ] Polishing the code
 - [ ] Making the other things
 - [ ] Contact page backend
