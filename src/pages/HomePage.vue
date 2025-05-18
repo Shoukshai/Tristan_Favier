@@ -105,17 +105,10 @@
             }, 0);
         }
     };
-
+    
     const randomHexColor = () => {
-        const hex = '0123456789ABCDEF';
-        return (
-            '#' +
-            Array.from(
-                { length: 6 },
-                () => hex[Math.floor(Math.random() * 16)],
-            ).join('')
-        );
-    };
+        return `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`
+    }
 
     const showRobotDialog = () => {
         isRobotDialogOn.value = true;

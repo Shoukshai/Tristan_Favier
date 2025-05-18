@@ -50,7 +50,7 @@
 
     const drawGrid = (dx = 0, dy = 0) => {
         ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
-        ctx.strokeStyle = 'rgba(61,35,83, 0.7)';
+        ctx.strokeStyle = 'rgba(61, 35, 83, 0.7)';
         ctx.lineWidth = 1;
 
         for (let x = -100 + dx; x <= canvas.value.width + 100; x += 100) {
