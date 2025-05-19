@@ -34,6 +34,7 @@
         backgroundColor: star.color,
         opacity: star.opacity,
         transform: star.transform,
+        boxShadow: `0 0 8px ${star.color}, 0 0 16px ${star.color}`,
     });
 </script>
 
