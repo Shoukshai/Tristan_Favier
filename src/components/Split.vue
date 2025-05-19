@@ -80,7 +80,6 @@
                                 >
                                     {{ panel.text }}
                                 </p>
-
                                 <div v-if="panel.text2">{{ panel.text2 }}</div>
                                 <div v-if="panel.text3">{{ panel.text3 }}</div>
                                 <div v-if="panel.text4">{{ panel.text4 }}</div>
@@ -101,7 +100,6 @@
             />
         </transition>
 
-
         <FloatingHomeButton
             v-if="!activeSection"
             @go-home="goHome"
@@ -110,7 +108,7 @@
 </template>
 
 <script setup>
-    import { ref, computed } from 'vue';
+    import { ref, computed, watch, onUnmounted } from 'vue';
     import { useRouter } from 'vue-router';
     import FloatingHomeButton from './FloatingHomeButton.vue';
     import MediaPlayer from './MediaPlayer.vue';
@@ -205,7 +203,7 @@
                 title: 'Serial Experiments Lain',
                 text: 'An interesting anime, this website is a bit inspired by it.',
                 text2: 'The story is a bit hard to understand, but it is very interesting.',
-                text3: 'Is is such a classic aswell.',
+                text3: 'Is is such a classic as well.',
                 image: anime3Img,
                 audio: '/audios/lain.flac',
             },
@@ -217,9 +215,8 @@
     const showPlayer = ref(false);
     const currentAudio = ref({ src: '', title: '' });
 
-    const getRandomColor = () => {
-        return `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
-    };
+    const getRandomColor = () =>
+        `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
 
     const setRandomColor = (index) => {
         hoverColors.value[index] = getRandomColor();
@@ -236,7 +233,7 @@
     };
 
     const playAudio = (src, title) => {
-        if (!src){
+        if (!src) {
             showPlayer.value = false;
             currentAudio.value = { src: '', title: '' };
             return;
@@ -250,6 +247,24 @@
     };
 
     const activePanels = computed(() => overlayData[activeSection.value] || []);
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') {
+            closeOverlay();
+        }
+    };
+
+    watch(activeSection, (newVal) => {
+        if (newVal) {
+            window.addEventListener('keydown', handleKeyDown);
+        } else {
+            window.removeEventListener('keydown', handleKeyDown);
+        }
+    });
+
+    onUnmounted(() => {
+        window.removeEventListener('keydown', handleKeyDown);
+    });
 </script>
 
 <style scoped>
@@ -265,6 +280,7 @@
         opacity: 0;
         transform: scale(0.95);
     }
+
     .fade-enter-active,
     .fade-leave-active {
         transition:
