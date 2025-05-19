@@ -95,7 +95,7 @@
 - [x] Passion page
 - [x] Adding content to the page
 - [x] Buttons for the calculator
-- [ ] Media player for the passion page
+- [x] Media player for the passion page
 - [ ] Polishing the code
 - [ ] Making the other things
 - [ ] Contact page backend
