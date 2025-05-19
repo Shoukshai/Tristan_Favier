@@ -34,7 +34,10 @@
             ></div>
         </transition>
 
-        <FloatingButton @open-modal="showRobotDialog" />
+        <transition name="fade">
+            <FloatingButton v-if="isQuizPanelOn" @open-modal="showRobotDialog" />
+        </transition>
+
         <RobotModal
             :show="isRobotDialogOn"
             @close="hideRobotDialog"
@@ -113,6 +116,7 @@
     const showRobotDialog = () => {
         isRobotDialogOn.value = true;
         isBlurOn.value = true;
+        isQuizPanelOn.value = false;
     };
 
     const hideRobotDialog = () => {
@@ -271,5 +275,13 @@
     .calc-leave-to {
         opacity: 0;
         transform: scale(0.9);
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+    transition: opacity 0.3s ease;
+    }
+    .fade-enter-from,
+    .fade-leave-to {
+    opacity: 0;
     }
 </style>
