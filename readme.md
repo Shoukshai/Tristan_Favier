@@ -10,7 +10,7 @@
 - [QnA](#QnA)
 - [Tree](#Tree)
 - [Roadmap](#Roadmap)
-- [How to use](#How to use)
+- [Installation](#Installation)
 - [Status](#Status)
 
 ## QnA
@@ -93,7 +93,7 @@
 - [ ] Performance upgrade in the contact page
 - [ ] Deploying the poject
 
-## How to use
+## Installation
 
 ```bash
 npm install
