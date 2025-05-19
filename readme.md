@@ -105,10 +105,11 @@
 ## Installation
 
 ```bash
+git clone https://github.com/Shoukshai/Tristan_Favier.git
 npm install
 npm run dev
 ```
 
 ## **Status:**
-> [!Warning]
-> **Under construction**, this is really not finished for now
+> [!NOTE]
+> **Under construction**, but it's somewhat usable and soon to be finished
