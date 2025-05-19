@@ -25,7 +25,7 @@
                         :key="index"
                     >
                         <button
-                            class="btn btn-outline w-full my-2"
+                            class="btn btn-outline w-full my-2 hover:bg-emerald-800"
                             :class="{
                                 'btn-success':
                                     selectedAnswer &&
@@ -51,7 +51,7 @@
                     </p>
                     <button
                         @click="$emit('close')"
-                        class="btn btn-outline hover:bg-emerald-950"
+                        class="btn btn-outline hover:bg-emerald-800"
                     >
                         Close
                     </button>

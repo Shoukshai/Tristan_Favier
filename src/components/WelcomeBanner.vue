@@ -6,28 +6,28 @@
         <div class="grid grid-cols-2 gap-x-6 gap-y-4">
             <button
                 @click="$emit('add-stars')"
-                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-800"
             >
                 Add stars
             </button>
 
             <button
                 @click="$emit('open-quiz')"
-                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-800"
             >
                 Open the QUIZ
             </button>
 
             <button
                 @click="$emit('toggle-calc')"
-                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-800"
             >
                 {{ isCalcOpen ? 'Close Calculator' : 'Open Calculator' }}
             </button>
 
             <button
                 @click="$emit('router-passion')"
-                class="btn btn-outline z-10 basis-66 hover:bg-emerald-950"
+                class="btn btn-outline z-10 basis-66 hover:bg-emerald-800"
             >
                 My passions
             </button>
