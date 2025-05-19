@@ -48,6 +48,7 @@
 │   │   ├───Calc.vue
 │   │   ├───ContactBanner.vue
 │   │   ├───FloatingButton.vue
+│   │   ├───FloatingHomeButton.vue
 │   │   ├───FooterBar.vue
 │   │   ├───LainBackground.vue
 │   │   ├───QuizModal.vue
