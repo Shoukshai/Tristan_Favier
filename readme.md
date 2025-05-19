@@ -64,7 +64,7 @@
 │   ├───App.vue
 │   ├───main.js
 │   ├───router.js
-│   ├───style.css
+│   └────style.css
 ├───index.html
 ├───package-lock.json
 ├───package.json
