@@ -73,8 +73,8 @@
 - [ ] ~~Port my old html/css cv to tailwindcss/daisyui~~
 - [x] Passion page
 - [x] Adding content to the page
+- [x] Buttons for the calculator
 - [ ] Media player for the passion page
-- [ ] Buttons for the calculator
 - [ ] Polishing the code
 - [ ] Making the other things
 - [ ] Contact page backend
