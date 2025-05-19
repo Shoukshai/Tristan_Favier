@@ -89,6 +89,7 @@
 
 <script setup>
     import { reactive, ref } from 'vue';
+    
     import SentModal from './SentModal.vue';
 
     const form = reactive({
