@@ -76,6 +76,7 @@
 - [ ] Polishing the code
 - [ ] Making the other things
 - [ ] Contact page backend
+- [ ] Performance upgrade in the contact page
 - [ ] Deploying the poject
 
 ## **Status:**
