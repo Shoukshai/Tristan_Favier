@@ -26,9 +26,20 @@
 "Tristan_Favier's Important File Tree"
 ├───src
 │   ├───assets
+│   │   ├───apothecary.png
+│   │   ├───coding.jpg
 │   │   ├───computer.png
 │   │   ├───expedition33.jpeg
+│   │   ├───expedition33.png
+│   │   ├───hardware.jpg
 │   │   ├───lain.jpeg
+│   │   ├───lain2.jpeg
+│   │   ├───lain3.jpeg
+│   │   ├───league.jpg
+│   │   ├───maomao.jpg
+│   │   ├───systeme.png
+│   │   ├───thebigblack.jpg
+│   │   ├───thirdimpact.jpeg
 │   │   └───vue.svg
 │   ├───components
 │   │   ├───AlertModal.vue
