@@ -45,8 +45,8 @@
         <AlertModal
             v-if="isBlockedNoticeOn"
             :isAlertOn="isBlockedNoticeOn"
-            title="Accès refusé"
-            message="Vous devez compléter le quiz avant d'accéder à cette page."
+            title="Acces refused"
+            message="You need to complete the quiz to access this page."
             @close="isBlockedNoticeOn = false"
         />
 
@@ -130,18 +130,17 @@
 
     const quizList = [
         {
-            question:
-                'Quel est le framework utilisé pour construire cette application ?',
+            question: 'What framework is used to create this website ?',
             options: ['Vue', 'React', 'Angular', 'Vite'],
             correct: 'Vue',
         },
         {
-            question: 'Combien de couleurs sont choisis pour le fond étoilé ?',
-            options: ['16', '32', '24', '6'],
-            correct: '6',
+            question: 'How many stars appears in the background ?',
+            options: ['100', '200', '300', '400'],
+            correct: '100',
         },
         {
-            question: 'A combien de fps voient les yeux humains ?',
+            question: 'At how many fps does the human eye see ?',
             options: ['32', '26', '24', '13'],
             correct: '13',
         },
@@ -188,7 +187,7 @@
         isBlurOn.value = true;
 
         const correct = answer === activeQuizItem.value.correct;
-        answerFeedback.value = correct ? 'Bonne réponse' : 'Mauvaise réponse';
+        answerFeedback.value = correct ? 'Correct' : 'Incorrect';
 
         setTimeout(() => {
             if (correct) {
@@ -198,7 +197,7 @@
                     resetQuizFeedback();
                     if (isBruteforceOn.value) runBruteforce();
                 } else {
-                    answerFeedback.value = 'Bravo, vous avez terminé le quiz !';
+                    answerFeedback.value = 'Congratulation you have completed the quiz !';
                     localStorage.setItem('quizCompleted', 'true');
                     isBruteforceOn.value = false;
                     setTimeout(() => router.push('/contact'), 1500);
