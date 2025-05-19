@@ -10,7 +10,7 @@
                 <label
                     for="email"
                     class="label font-semibold"
-                    >Your email*</label
+                    >*Your email</label
                 >
                 <input
                     id="email"
@@ -26,7 +26,7 @@
                 <label
                     for="name"
                     class="label font-semibold"
-                    >Your name*</label
+                    >*Your name</label
                 >
                 <input
                     id="name"
@@ -57,7 +57,7 @@
                 <label
                     for="message"
                     class="label font-semibold"
-                    >Message*</label
+                    >*Message</label
                 >
                 <textarea
                     id="message"
