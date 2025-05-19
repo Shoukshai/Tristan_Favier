@@ -25,6 +25,14 @@
 ## Tree
 ```bash
 "Tristan_Favier's Important File Tree"
+├───public
+│   └───audios
+│       ├───apothecary.flac
+│       ├───evangelion.flac
+│       ├───expedition.flac
+│       ├───lain.flac
+│       ├───league.flac
+│       └───osu.flac
 ├───src
 │   ├───assets
 │   │   ├───apothecary.png

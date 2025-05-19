@@ -46,7 +46,7 @@
         >
             <div
                 v-if="activeSection"
-                class="absolute inset-0 z-50 flex items-center justify-center"
+                class="absolute inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center"
                 @click.self="closeOverlay"
             >
                 <div
@@ -57,6 +57,7 @@
                         v-for="(panel, index) in activePanels"
                         :key="index"
                         class="group relative w-full h-1/3 overflow-hidden rounded-lg cursor-pointer transition-all duration-500 hover:scale-[1.01]"
+                        @click="playAudio(panel.audio, panel.title)"
                     >
                         <img
                             :src="panel.image"
@@ -78,16 +79,29 @@
                                     class="text-2x1 group-hover:text-gray-200 transition duration-300"
                                 >
                                     {{ panel.text }}
-                                    <div v-if="panel.text2">{{ panel.text2 }}</div>
-                                    <div v-if="panel.text3">{{ panel.text3 }}</div>
-                                    <div v-if="panel.text4">{{ panel.text4 }}</div>
                                 </p>
+
+                                <div v-if="panel.text2">{{ panel.text2 }}</div>
+                                <div v-if="panel.text3">{{ panel.text3 }}</div>
+                                <div v-if="panel.text4">{{ panel.text4 }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </transition>
+
+        <transition name="fade">
+            <MediaPlayer
+                v-if="showPlayer"
+                :src="currentAudio.src"
+                :title="currentAudio.title"
+                :visible="showPlayer"
+                @close="showPlayer = false"
+            />
+        </transition>
+
+
         <FloatingHomeButton
             v-if="!activeSection"
             @go-home="goHome"
@@ -98,8 +112,8 @@
 <script setup>
     import { ref, computed } from 'vue';
     import { useRouter } from 'vue-router';
-    
     import FloatingHomeButton from './FloatingHomeButton.vue';
+    import MediaPlayer from './MediaPlayer.vue';
 
     import computerImg from '../assets/computer.png';
     import gamesImg from '../assets/expedition33.jpeg';
@@ -116,7 +130,7 @@
     import anime1Img from '../assets/thirdimpact.jpeg';
     import anime2Img from '../assets/apothecary.png';
     import anime3Img from '../assets/lain3.jpeg';
-    
+
     const router = useRouter();
 
     const sections = [
@@ -151,12 +165,14 @@
                 text: 'One of the best games I have ever played yet.',
                 text2: 'The story is amazing, and the ost are just insane.',
                 image: game1Img,
+                audio: '/audios/expedition.flac',
             },
             {
                 title: 'League of Legends',
                 text: 'A game I played for about 9 years, I am currently on a break.',
                 text2: 'I peaked at diamond 2 with more then 60% winrate, I could have gone higher in rank.',
                 image: game2Img,
+                audio: '/audios/league.flac',
             },
             {
                 title: 'Osu!',
@@ -164,6 +180,7 @@
                 text2: 'Ive been playing it for a very long time.',
                 text3: 'I am currently ranked in the top 15k in the world.',
                 image: game3Img,
+                audio: '/audios/osu.flac',
             },
         ],
         animes: [
@@ -174,6 +191,7 @@
                 text3: 'The ost are stunning, and the animation is just incredible for such an old anime.',
                 text4: 'It is a classic, and I recommend it to everyone.',
                 image: anime1Img,
+                audio: '/audios/evangelion.flac',
             },
             {
                 title: 'The apothecary diaries',
@@ -181,6 +199,7 @@
                 text2: 'The animation is so good, the opening is one of the best I have ever heard/seen.',
                 text3: 'I am very excited to see how the story will evolve.',
                 image: anime2Img,
+                audio: '/audios/apothecary.flac',
             },
             {
                 title: 'Serial Experiments Lain',
@@ -188,16 +207,19 @@
                 text2: 'The story is a bit hard to understand, but it is very interesting.',
                 text3: 'Is is such a classic aswell.',
                 image: anime3Img,
+                audio: '/audios/lain.flac',
             },
         ],
     };
 
     const hoverColors = ref([]);
     const activeSection = ref(null);
+    const showPlayer = ref(false);
+    const currentAudio = ref({ src: '', title: '' });
 
     const getRandomColor = () => {
-        return `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`
-    }
+        return `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
+    };
 
     const setRandomColor = (index) => {
         hoverColors.value[index] = getRandomColor();
@@ -213,12 +235,21 @@
         history.replaceState(null, '', window.location.pathname);
     };
 
-    const activePanels = computed(() => overlayData[activeSection.value] || []);
+    const playAudio = (src, title) => {
+        if (!src){
+            showPlayer.value = false;
+            currentAudio.value = { src: '', title: '' };
+            return;
+        }
+        currentAudio.value = { src, title };
+        showPlayer.value = true;
+    };
 
     const goHome = () => {
         router.push('/');
     };
 
+    const activePanels = computed(() => overlayData[activeSection.value] || []);
 </script>
 
 <style scoped>
@@ -233,5 +264,15 @@
     .overlay-leave-to {
         opacity: 0;
         transform: scale(0.95);
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
     }
 </style>
