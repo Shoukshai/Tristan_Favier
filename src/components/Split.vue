@@ -78,15 +78,9 @@
                                     class="text-2x1 group-hover:text-gray-200 transition duration-300"
                                 >
                                     {{ panel.text }}
-                                    <div v-if="panel.text2">
-                                        {{ panel.text2 }}
-                                    </div>
-                                    <div v-if="panel.text3">
-                                        {{ panel.text3 }}
-                                    </div>
-                                    <div v-if="panel.text4">
-                                        {{ panel.text4 }}
-                                    </div>
+                                    <div v-if="panel.text2">{{ panel.text2 }}</div>
+                                    <div v-if="panel.text3">{{ panel.text3 }}</div>
+                                    <div v-if="panel.text4">{{ panel.text4 }}</div>
                                 </p>
                             </div>
                         </div>
@@ -94,11 +88,18 @@
                 </div>
             </div>
         </transition>
+        <FloatingHomeButton
+            v-if="!activeSection"
+            @go-home="goHome"
+        />
     </div>
 </template>
 
 <script setup>
     import { ref, computed } from 'vue';
+    import { useRouter } from 'vue-router';
+    
+    import FloatingHomeButton from './FloatingHomeButton.vue';
 
     import computerImg from '../assets/computer.png';
     import gamesImg from '../assets/expedition33.jpeg';
@@ -115,6 +116,8 @@
     import anime1Img from '../assets/thirdimpact.jpeg';
     import anime2Img from '../assets/apothecary.png';
     import anime3Img from '../assets/lain3.jpeg';
+    
+    const router = useRouter();
 
     const sections = [
         { key: 'informatics', label: 'Informatics', src: computerImg },
@@ -211,6 +214,11 @@
     };
 
     const activePanels = computed(() => overlayData[activeSection.value] || []);
+
+    const goHome = () => {
+        router.push('/');
+    };
+
 </script>
 
 <style scoped>
