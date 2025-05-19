@@ -10,6 +10,7 @@
 - [QnA](#QnA)
 - [Tree](#Tree)
 - [Roadmap](#Roadmap)
+- [How to use](#How to use)
 - [Status](#Status)
 
 ## QnA
@@ -91,6 +92,13 @@
 - [ ] Contact page backend
 - [ ] Performance upgrade in the contact page
 - [ ] Deploying the poject
+
+## How to use
+
+```bash
+npm install
+npm run dev
+```
 
 ## **Status:**
 > [!Warning]
