@@ -45,13 +45,15 @@
         />
         <StarField :stars="stars" />
 
-        <AlertModal
-            v-if="isBlockedNoticeOn"
-            :isAlertOn="isBlockedNoticeOn"
-            title="Acces refused"
-            message="You need to complete the quiz to access this page."
-            @close="isBlockedNoticeOn = false"
-        />
+        <transition name="fade">
+            <AlertModal
+                v-if="isBlockedNoticeOn"
+                :isAlertOn="isBlockedNoticeOn"
+                title="Acces refused"
+                message="You need to complete the quiz to access this page."
+                @close="isBlockedNoticeOn = false"
+            />
+        </transition>
 
         <transition name="calc">
             <Calc v-if="isCalculatorOn" />
