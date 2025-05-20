@@ -106,6 +106,7 @@
 
 ```bash
 git clone https://github.com/Shoukshai/Tristan_Favier.git
+cd Tristan_Favier/
 npm install
 npm run dev
 ```
