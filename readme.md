@@ -21,6 +21,8 @@
     - Because I want vue router.
 - Did I used any form of AI ?
     - Yes, for minor issue fix / easier time at refactoring code (faster) / code overhauls
+- Why Axios over mailto ?
+    - I had issue setting up mailto with my browser, and I wanted to use axios and my own mail server. However, because of exams being soon, I do not have the time to make one, so Instead I rely on [web3forms](https://web3forms.com)'s service.
 
 ## Tree
 ```bash
@@ -55,6 +57,7 @@
 │   │   ├───BruteforceBanner.vue
 │   │   ├───Calc.vue
 │   │   ├───ContactBanner.vue
+│   │   ├───ErrorModal.vue
 │   │   ├───FloatingButton.vue
 │   │   ├───FloatingHomeButton.vue
 │   │   ├───FooterBar.vue
@@ -98,7 +101,7 @@
 - [x] Media player for the passion page
 - [ ] Polishing the code
 - [ ] Making the other things
-- [ ] Contact page backend
+- [x] Contact page 'backend'
 - [ ] Performance upgrade in the contact page
 - [ ] Deploying the poject
 

@@ -47,9 +47,10 @@
                 <input
                     id="subject"
                     type="text"
-                    class="input input-bordered w-full"
-                    placeholder="Subject"
+                    class="input input-bordered w-full opacity-75"
+                    placeholder="Removed due to api limitations"
                     v-model="form.subject"
+                    disabled
                 />
             </div>
 
@@ -84,13 +85,21 @@
             message="Your message has been successfully sent"
             @close="isSentModalOn = false"
         />
+
+        <ErrorModal
+            :show="isErrorModalOn"
+            title="Error"
+            :message="errorMessage"
+            @close="isErrorModalOn = false"
+        />
     </div>
 </template>
 
 <script setup>
     import { reactive, ref } from 'vue';
-    
+    import axios from 'axios';
     import SentModal from './SentModal.vue';
+    import ErrorModal from './ErrorModal.vue';
 
     const form = reactive({
         email: '',
@@ -106,20 +115,42 @@
     });
 
     const isSentModalOn = ref(false);
+    const isErrorModalOn = ref(false);
+    const errorMessage = ref('');
 
-    const submitForm = () => {
+    const submitForm = async () => {
         errors.email = !form.email.trim();
         errors.name = !form.name.trim();
         errors.message = !form.message.trim();
 
         const hasIssue = errors.email || errors.name || errors.message;
+        if (hasIssue) return;
 
-        if (!hasIssue) {
-            isSentModalOn.value = true;
-            form.email = '';
-            form.name = '';
-            form.subject = '';
-            form.message = '';
+        try {
+            const { data } = await axios.post(
+                'https://api.web3forms.com/submit',
+                {
+                    access_key: "7e292ef5-0193-41f9-84c8-8c273b317f94",
+                    name: form.name,
+                    email: form.email,
+                    message: form.message,
+                },
+            );
+
+            if (data.success) {
+                isSentModalOn.value = true;
+                form.email = '';
+                form.name = '';
+                form.message = '';
+            } else {
+                errorMessage.value =
+                    'Failed to send message. Please try again later.';
+                isErrorModalOn.value = true;
+            }
+        } catch (err) {
+            errorMessage.value =
+                'An error occurred while sending your message.';
+            isErrorModalOn.value = true;
         }
     };
 </script>
