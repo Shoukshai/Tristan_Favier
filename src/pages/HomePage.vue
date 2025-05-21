@@ -22,8 +22,10 @@
             :question="activeQuizItem"
             :selectedAnswer="chosenAnswer"
             :feedbackMessage="answerFeedback"
+            :isQuizCompleted="isQuizCompleted"
             @close="closeQuizPanel"
             @select="handleAnswerSelect"
+            @skip-quiz="skipQuiz"
         />
 
         <transition name="blur">
@@ -89,6 +91,7 @@
     const isBruteforceOn = ref(false);
     const isBlockedNoticeOn = ref(false);
     const isCalculatorOn = ref(false);
+    const isQuizCompleted = ref(false)
 
     const route = useRoute();
     const router = useRouter();
@@ -165,7 +168,7 @@
         answerFeedback.value = '';
         isFeedbackVisible.value = false;
         isBlurOn.value = true;
-        localStorage.setItem('quizCompleted', 'false');
+        isQuizCompleted.value = localStorage.getItem('quizCompleted') === 'true';
     };
 
     const closeQuizPanel = () => {
@@ -244,6 +247,10 @@
 
     const goToPassion = () => {
         router.push('/passion');
+    };
+
+    const skipQuiz = () => {
+        router.push('/contact');
     };
 </script>
 
