@@ -28,6 +28,7 @@
 ```bash
 "Tristan_Favier's Important File Tree"
 ├───public
+│   ├───icon.png
 │   └───audios
 │       ├───apothecary.flac
 │       ├───evangelion.flac
