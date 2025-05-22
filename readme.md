@@ -101,11 +101,10 @@
 - [x] Adding content to the page
 - [x] Buttons for the calculator
 - [x] Media player for the passion page
-- [ ] Polishing the code
-- [ ] Making the other things
+- [ ] ~~Polishing the code~~
 - [x] Contact page 'backend'
-- [ ] Performance upgrade in the contact page
-- [ ] Deploying the poject
+- [ ] ~~Performance upgrade in the contact page~~
+- [ ] ~~Deploying the poject~~
 
 ## Installation
 
@@ -118,4 +117,4 @@ npm run dev
 
 ## **Status:**
 > [!NOTE]
-> **Under construction**, but it's somewhat usable and soon to be finished
+> **I think** that it's mostly finished, the codebase need to be polished a bit but overall, it's usable
