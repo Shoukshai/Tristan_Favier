@@ -2,8 +2,8 @@
 
 ![Unstable](https://img.shields.io/badge/Unstable%20Release-purple?style=flat)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)
-![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwind-css&logoColor=fff)
-![VUE](https://img.shields.io/badge/Vue%20JS-35495E?logo=vuedotjs&logoColor=ggg)
+[![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwind-css&logoColor=fff)](https://tailwindcss.com/)
+[![VUE](https://img.shields.io/badge/Vue%20JS-35495E?logo=vuedotjs&logoColor=ggg)](https://vuejs.org/)
 ![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)
 [![DaisyUI](https://img.shields.io/badge/daisyUI-5A0EF8?&logo=daisyui&logoColor=white)](https://daisyui.com/)
 
