@@ -1,6 +1,6 @@
 # Folder for the web dev project
 
-![Under Construction](https://img.shields.io/badge/Under%20Construction-red?style=flat)
+![Unstable](https://img.shields.io/badge/Unstable%20Release-purple?style=flat)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)
 ![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwind-css&logoColor=fff)
 ![VUE](https://img.shields.io/badge/Vue%20JS-35495E?logo=vuedotjs&logoColor=ggg)
