@@ -17,8 +17,9 @@
 - Why is the entire repo/code in english ?
     - It's because in a real project, we have a higher chance to use english over french
 - Why use vue instead of vite like we saw in classe ?
-    - Because im more used to vue instead of vite, and the teacher said that we could use react for example if we are more experienced with it.
+    - Because im more used to vue instead of basic vite, and the teacher said that we could use react for example if we are more experienced with it.
     - Because I want vue router.
+    - Because It dosen't change the syntax of daisyUI / TailwindCSS / Html unlike angular
 - Did I used any form of AI ?
     - Yes, for minor issue fix / easier time at refactoring code (faster) / code overhauls
 - Why Axios over mailto ?
