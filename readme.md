@@ -117,4 +117,4 @@ npm run dev
 
 ## **Status:**
 > [!NOTE]
-> **I think** that it's mostly finished, the codebase need to be polished a bit but overall, it's usable
+> **I think** that it's mostly finished, the codebase need to be polished a bit but overall, it's usable and do everything of what we are asked to do
