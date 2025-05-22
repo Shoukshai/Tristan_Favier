@@ -5,7 +5,7 @@
 ![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwind-css&logoColor=fff)
 ![VUE](https://img.shields.io/badge/Vue%20JS-35495E?logo=vuedotjs&logoColor=ggg)
 ![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)
-![DaisyUI](https://img.shields.io/badge/daisyUI-5A0EF8?&logo=daisyui&logoColor=white)
+[![DaisyUI](https://img.shields.io/badge/daisyUI-5A0EF8?&logo=daisyui&logoColor=white)](https://daisyui.com/)
 
 ## Table of contents
 - [QnA](#QnA)
